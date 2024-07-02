@@ -21,7 +21,7 @@ annotateGenes.hg20 <- function(mat, ID.type="S"){
     data <- cbind(anno, mat)
 
   }else if(substring(ID.type,1,1) %in% c("S", "s")) {
-
+    print(rownames(mat))
     shar <- intersect(rownames(mat), full.anno$hgnc_symbol)
     print(length(shar))
     mat <- mat[which(rownames(mat) %in% shar),]
