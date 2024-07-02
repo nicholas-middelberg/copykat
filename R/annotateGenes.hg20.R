@@ -14,9 +14,8 @@ annotateGenes.hg20 <- function(mat, ID.type="S"){
 
   if(substring(ID.type,1,1) %in% c("E", "e")){
     shar <- intersect(rownames(mat), full.anno$ensembl_gene_id)
-    if(length(shar) == 0) {
-      print("No matching gene IDs found between the data matrix and the annotation file.")
-    }
+    print("testing")
+    print(length(shar))
     mat <- mat[which(rownames(mat) %in% shar),]
     anno <- full.anno[which(as.vector(full.anno$ensembl_gene_id) %in% shar),]
     anno <- anno[!duplicated(anno$hgnc_symbol),]
