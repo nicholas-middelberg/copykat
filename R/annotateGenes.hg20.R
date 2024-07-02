@@ -14,8 +14,6 @@ annotateGenes.hg20 <- function(mat, ID.type="S"){
 
   if(substring(ID.type,1,1) %in% c("E", "e")){
     shar <- intersect(rownames(mat), full.anno$ensembl_gene_id)
-    print("testing")
-    print(length(shar))
     mat <- mat[which(rownames(mat) %in% shar),]
     anno <- full.anno[which(as.vector(full.anno$ensembl_gene_id) %in% shar),]
     anno <- anno[!duplicated(anno$hgnc_symbol),]
@@ -25,6 +23,7 @@ annotateGenes.hg20 <- function(mat, ID.type="S"){
   }else if(substring(ID.type,1,1) %in% c("S", "s")) {
 
     shar <- intersect(rownames(mat), full.anno$hgnc_symbol)
+    print(length(shar))
     mat <- mat[which(rownames(mat) %in% shar),]
     anno <- full.anno[which(as.vector(full.anno$hgnc_symbol) %in% shar),]
     anno <- anno[!duplicated(anno$hgnc_symbol),]
