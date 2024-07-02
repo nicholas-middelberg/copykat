@@ -68,7 +68,7 @@ start_time <- Sys.time()
   }
   anno.mat <- anno.mat[order(as.numeric(anno.mat$abspos), decreasing = FALSE),]
 
-# print(paste(nrow(anno.mat)," genes annotated", sep=""))
+  print(paste(nrow(anno.mat)," genes annotated", sep=""))
 
   ### module 3 removing genes that are involved in cell cycling
 
@@ -79,7 +79,7 @@ start_time <- Sys.time()
     anno.mat <- anno.mat[-toRev, ]
   }
   }
-#  print(paste(nrow(anno.mat)," genes after rm cell cycle genes", sep=""))
+  print(paste(nrow(anno.mat)," genes after rm cell cycle genes", sep=""))
   ### secondary filtering
   ToRemov2 <- NULL
   for(i in 8:ncol(anno.mat)){
