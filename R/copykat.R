@@ -60,7 +60,6 @@ start_time <- Sys.time()
   }
 
   print("step 2: annotations gene coordinates ...")
-  print("testing my changes")
   if(genome=="hg20"){
   anno.mat <- annotateGenes.hg20(mat = rawmat, ID.type = id.type) #SYMBOL or ENSEMBLE
   } else if(genome=="mm10"){
